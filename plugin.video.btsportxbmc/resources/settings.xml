@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30001">
+        <setting label="30010" type="text" id="email" default=""/>
+        <setting label="30014" type="text" id="password" option="hidden"  enable="!eq(-1,)" default=""/>
+	<setting label="30034" type="bool" id="gpu" default="true"/>
+    </category>
+    <category label="30002">
+        <setting label="30018" type="text" id="pipelightName" default="libpipelight.so"/>
+        <setting label="30022" type="text" id="pipelightDirectory" default="/usr/lib/pipelight"/>
+        <setting label="30026" type="text" id="mozillaDirectory" default="/usr/lib/mozilla/plugins"/>
+    </category>
+</settings>
