@@ -15,8 +15,8 @@ from PyQt4 import QtCore, QtGui
 from resources.lib.btsport_login import BtSportLogin
 
 __plugin__ = "BTSportXBMC"
-__authors__ = "hirodotp"
-__credits__ = "hirodotp"
+__authors__ = "jackandrews"
+__credits__ = "jackandrews"
 
 __settings__ = Addon(id="plugin.video.btsportxbmc")
 
