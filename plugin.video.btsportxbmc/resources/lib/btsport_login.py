@@ -22,18 +22,7 @@ class BtSportLogin:
 		response = opener.open(request)
 		print response.read()
 
-	def GetAuthURL(self):
-		url = 'https://signup.netflix.com/Login'
-		opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
-		resp = opener.open(url)
-		data = resp.read()
-		match = re.search(r'.*?input.*?authURL.*?value.*?"(.*?)"', data)
-		authURL = None
-		if(match):
-			authURL = match.group(1)
-		return(authURL)
-
-	def GetCookies(self):
+	def get_cookies(self):
 		cookies = []
 		for cookie in self.cj:
 			cookies.append([cookie.name, cookie.value])
