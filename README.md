@@ -1,7 +1,7 @@
 Overview
 ========
 
-Netflixbmc is an addon for XBMC allowing you to watch Netflix under Linux.
+This is an attempt to get BT Sport running in XBMC on Linux using Pipelight.
 
 
 How it Works
@@ -41,6 +41,4 @@ Don't forget to autohide your mouse with unclutter!
 Thank You
 =========
 
-Thank you to my wife who has put up with my neglect over the past few days
-while I worked on this addon.
-
+This is forked from https://github.com/jdwilliams19/netflixbmc
