@@ -2,10 +2,11 @@ import sys
 import unittest
 from ..btsport_login import BtSportLogin
 
+
 class TestLogin(unittest.TestCase):
 
     def setUp(self):
-        self.username = '' #todo: get from xbmc config
+        self.username = ''  # todo: get from xbmc config
         self.password = ''
 
     def test_login(self):
