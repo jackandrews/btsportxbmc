@@ -6,7 +6,7 @@
 	<setting label="30034" type="bool" id="gpu" default="true"/>
     </category>
     <category label="30002">
-        <setting label="30018" type="text" id="pipelightName" default="libpipelight.so"/>
+        <setting label="30018" type="text" id="pipelightName" default="libpipelight-silverlight5.0.so"/>
         <setting label="30022" type="text" id="pipelightDirectory" default="/usr/lib/pipelight"/>
         <setting label="30026" type="text" id="mozillaDirectory" default="/usr/lib/mozilla/plugins"/>
     </category>

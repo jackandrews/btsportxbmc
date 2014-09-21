@@ -12,17 +12,12 @@ import tempfile
 import shutil
 from PyQt4 import QtCore, QtGui, QtWebKit, QtNetwork
 
-MOZILLA_PLUGINDIR = "/usr/lib/mozilla/plugins"
-PIPELIGHT_LIBDIR = "/usr/lib/pipelight"
-PIPELIGHT_LIBRARY = "libpipelight.so"
-
 
 class PipelightMainWindow(QtGui.QMainWindow):
 
     def __init__(self, page, cookies=[]):
         QtGui.QMainWindow.__init__(self)
-        self.setStyleSheet(
-            "QWidget { background-color: %s }" % QtGui.QColor(0, 0, 0).name())
+        self.setStyleSheet("QWidget { background-color: %s }" % QtGui.QColor(0, 0, 0).name())
 
         self.cookies = cookies
 
@@ -47,7 +42,7 @@ class PipelightMainWindow(QtGui.QMainWindow):
         self.browser = Browser(self.browser_page, self.cookies)
 
         timer = QtCore.QTimer()
-        timer.singleShot(10000, self.checkIfEmbedded)
+        timer.singleShot(20000, self.checkIfEmbedded)
 
     def checkIfEmbedded(self):
         if not self.is_embedded:
@@ -115,16 +110,13 @@ class Browser(QtWebKit.QWebView):
         page.setNetworkAccessManager(nmanager)
         self.setPage(page)
 
-        self.settings().setAttribute(
-            QtWebKit.QWebSettings.PluginsEnabled, True)
-        self.settings().setAttribute(
-            QtWebKit.QWebSettings.DeveloperExtrasEnabled, True)
-        QtCore.QObject.connect(
-            self, QtCore.SIGNAL('loadFinished(bool)'), self.loadFinished)
+        self.settings().setAttribute(QtWebKit.QWebSettings.PluginsEnabled, True)
+        self.settings().setAttribute(QtWebKit.QWebSettings.DeveloperExtrasEnabled, True)
+        QtCore.QObject.connect(self, QtCore.SIGNAL('loadFinished(bool)'), self.loadFinished)
         self.load(QtCore.QUrl(url))
 
     def loadFinished(self, ok):
-        pass
+        print "load finished!"
 
 
 class Pipelight:
@@ -146,6 +138,7 @@ class Pipelight:
         try:
             # Pipelight not enabled systemwide, create a temporary plugin dir
             if not self.enabled_systemwide:
+                print "not enabled system wide!"
                 plugin_tempdir = tempfile.mkdtemp()
                 os.symlink("%s/%s" % (self.pipelightDirectory, self.pipelightName),
                            "%s/%s" % (plugin_tempdir, self.pipelightName))
@@ -176,8 +169,8 @@ if __name__ == "__main__":
     url = sys.argv.pop(0)
 
     # force gpu acceleration if specified to
-    if gpuAccel == "true":
-        os.putenv("PIPELIGHT_GPUACCELERATION", "1")
+    #if gpuAccel == "true":
+    #    os.putenv("PIPELIGHT_GPUACCELERATION", "1")
 
     cookies = []
     c = []

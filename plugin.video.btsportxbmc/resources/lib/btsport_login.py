@@ -25,7 +25,7 @@ class BtSportLogin:
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
         request = urllib2.Request(url, post, headers)
         response = opener.open(request)
-        print response.read()
+        resp = response.read()
 
     def get_cookies(self):
         cookies = []
