@@ -18,23 +18,21 @@ Installation
 2. Ensure you can view BT Sport in Firefox (Chrome no longer supports pipelight).
 
 3. Install the following dependencies:
-   "sudo pt-get install python-qt4 python-numpy"
+   "sudo pt-get install python-qt4 python-numpy python-xlib"
    "sudo easy_install PyUserInput"
 
 4. Test the standalone BT Sport player:
-   "vim " (enter your BT sport username and password here)
-   "" (check that you get BT Sport 1 playing)
+   "vim plugin.video.btsportxbmc/resources/lib/test_pipelight.py" (enter your BT sport username and password here)
+   "python plugin.video.btsportxbmc/resources/lib/test_pipelight.py" (check that you get BT Sport 1 playing)
 
 5. Configure the XBMC plugin (enter username and password - otherwise default settings should be fine).
-6. 
 
 Gotchyas
 ========
 
 You can close the pipelight window by sending an Escape key.
 
-You need a window manager running.  If you're running xbmc in standalone mode
-you'll need to have fluxbox or some other manager running.
+You need a window manager running.  If you're running xbmc in standalone mode you'll need to have fluxbox or some other manager running.
 
 People running compiz, emerald, etc. may experience issues with the player (try disabling these if they are running).
 
