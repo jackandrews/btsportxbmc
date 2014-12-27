@@ -1,12 +1,12 @@
 Overview
 ========
 
-This is an XBMC plugin to play BT Sport on XBMC using Pipelight.  It requires linux.
+This is an XBMC plugin to play BT Sport on XBMC using Pipelight.  It requires linux (and obviously a BT Sport subscription).  See a demo here: https://www.youtube.com/watch?v=Pn9bAV5WwJc
 
 How it Works
 ============
 
-PyQt4 is used to implement a standalone fullscreen Pipelight viewer for BT Sport.  It automatically logs in, waits for BT Sport to load, hits play and goes fullscreen.
+PyQt4 is used to implement a standalone fullscreen Pipelight viewer for BT Sport.  It automatically logs in, waits for BT Sport to load and hits play.
 
 Installation
 ============
@@ -34,9 +34,6 @@ You can close the pipelight window by sending an Escape key.
 You need a window manager running.  If you're running xbmc in standalone mode you'll need to have fluxbox or some other manager running.
 
 People running compiz, emerald, etc. may experience issues with the player (try disabling these if they are running).
-
-Don't forget to autohide your mouse with unclutter!
-
 
 Thank You
 =========
