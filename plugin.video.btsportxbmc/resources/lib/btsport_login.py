@@ -5,7 +5,7 @@ import re
 import random
 
 
-class BtSportLogin:
+class BtSportLogin(object):
 
     def __init__(self, user, password):
         self.cj = cookielib.CookieJar()
